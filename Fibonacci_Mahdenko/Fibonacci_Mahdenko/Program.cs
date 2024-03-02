@@ -11,10 +11,8 @@ namespace Fibonacci_Mahdenko
         {
             try
             {
-                string filePath = Path.Combine(Directory.GetCurrentDirectory(), "MaxNumber.txt");
-                int maxNumber = int.Parse(File.ReadAllText(filePath));
-                string filePathSecond = Path.Combine(Directory.GetCurrentDirectory(), "FirstNumbers.txt");
-                string firstNumbersText = File.ReadAllText(filePathSecond);
+                int maxNumber = int.Parse(File.ReadAllText("MaxNumber.txt"));
+                string firstNumbersText = File.ReadAllText("FirstNumbers.txt");
                 string[] firstNumbersArray = firstNumbersText.Split(',');
 
                 List<int> inputNumbers = firstNumbersArray.Select(int.Parse).ToList();
@@ -25,8 +23,7 @@ namespace Fibonacci_Mahdenko
                 Console.WriteLine($"Fibonacci steps: {FibonacciCalculator.Steps} \n");
 
                 FibonacciCalculator.steps = 0;
-                string filePathThird = Path.Combine(Directory.GetCurrentDirectory(), "CountSteps.txt");
-                int steps = int.Parse(File.ReadAllText(filePathThird));
+                int steps = int.Parse(File.ReadAllText("CountSteps.txt"));
                 int firstNumber = int.Parse(firstNumbersArray[0]);
                 int secondNumber = int.Parse(firstNumbersArray[1]);
 
